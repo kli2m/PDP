@@ -61,10 +61,36 @@
     - [Responsive Web Design - Media Queries](https://www.w3schools.com/css/css_rwd_mediaqueries.asp) [EN]
     - [Media Queries html5book.ru](https://html5book.ru/css3-mediazaprosy/) [RU]
 - *Web safe fonts, custom web fonts, font formats, icon fonts, font-face, font generators/services etc.*
+    - [Font family](https://developer.mozilla.org/ru/docs/Web/CSS/font-family) [RU]
+    - [Web fonts](https://developer.mozilla.org/ru/docs/Learn/CSS/Styling_text/Web_fonts) [RU]
+    - [Css websafe fonts html5css.ru](https://html5css.ru/cssref/css_websafe_fonts.php) [RU]
+    - [@font-face](https://developer.mozilla.org/ru/docs/Web/CSS/@font-face) [RU]
+    - [Css pr font-face basicweb.ru](https://basicweb.ru/css/css_pr_font-face.php) [RU]
+    - [Css icons html5css.ru](https://html5css.ru/css/css_icons.php) [RU]
+    - [Font generators habr.com](https://habr.com/ru/post/118056/) [RU]
 - *Positioning*
+    - [Positioning](https://developer.mozilla.org/ru/docs/Web/CSS/position) [RU]
+    - [Position learn.javascript.ru](https://learn.javascript.ru/position) [RU]
 - *Flex-box OR Grid layout*
+    - [Flex-box](https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Flexbox) [RU]
+    - [Flex-box html5book.ru](https://html5book.ru/css3-flexbox/) [RU]
+    - [Grid layout](https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout) [RU]
+    - [Grid layout html5book.ru](https://html5book.ru/css-grid/) [RU]
+    - [Flex-box vs Grid layout habr.com](https://habr.com/ru/company/ruvds/blog/523808/) [RU]
 - *Popular CSS Pre-processors* (SASS/SCSS --or-- LESS)
+    - [CSS preprocessor](https://developer.mozilla.org/ru/docs/Glossary/CSS_preprocessor) [RU]
+    - [SASS](https://sass-scss.ru/guide/) [RU]
+    - [LESS](http://www.webmasters.by/articles/html-coding/2858-less.html) [RU]
+    - [SASS vs LESS habr.com](https://habr.com/ru/post/144309/) [RU]
 - *Responsive Web Design* (RWD)
+    - [Responsive Design](https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Responsive_Design) [RU]
+    - [Responsive Design habr.com](https://habr.com/ru/post/125247/) [RU]
 - *Adaptive Web Design* (AWD)
+    - [Adaptive Web Design html5css.ru](https://html5css.ru/html/html_responsive.php) [RU]
+    - [Adaptive Web Design tproger.ru](https://tproger.ru/translations/responsive-web-design-tips/) [RU]
 - *Mobile approaches* (mobile first, progressive enhancement, graceful degradation)
+    - [Responsive web design principles](http://x-site.by/info/responsive-web-design-principles) [RU]
+    - [Mobile First habr.com](https://habr.com/ru/post/269419/) [RU]
+    - [Progressive enhancement htmlacademy.ru](https://htmlacademy.ru/blog/boost/frontend/progressive-enhancement) [RU]
+    - [graceful-degradation ](https://htmlacademy.ru/blog/boost/frontend/graceful-degradation) [RU]
 
