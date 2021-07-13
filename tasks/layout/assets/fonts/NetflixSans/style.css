@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Netflix Sans Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Netflix Sans Regular'), url('NetflixSansRegular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Netflix Sans Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Netflix Sans Medium'), url('NetflixSansMedium.woff') format('woff');
+}
