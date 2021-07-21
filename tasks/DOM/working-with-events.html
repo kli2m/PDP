@@ -1,29 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Working with events</title>
-  </head>
 
-  <body>
-    <div class="wrapper">
-      <div class="wrapper__box-inputs">
-        <input type="text" name="text" value="text" />
-        <input
-          class="btn-element-one"
-          type="button"
-          name="buttonOne"
-          value="buttonOne"
-        />
-        <input
-          class="btn-element-two"
-          type="button"
-          name="buttonTwo"
-          value="buttonTwo"
-        />
-        <label>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working with events</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="wrapper__box-inputs">
+      <input type="text" name="text" value="text" />
+      <input class="btn-element-one" type="button" name="buttonOne" value="buttonOne" />
+      <input class="btn-element-two" type="button" name="buttonTwo" value="buttonTwo" />
+      <label>
           <input type="radio" name="radio" value="radio" />RadioOne</label
         >
         <label>
@@ -38,66 +29,44 @@
           />
           checkbox
         </label>
-        <a href="#link" class="class-link-to">Link to ...</a>
-      </div>
-      <div
-        class="mouse-events"
-        style="display: flex; justify-content: center; margin: 20px"
-      >
-        <div
-          class="mouse-events__box-one"
-          style="
+      <a href="#link" class="class-link-to">Link to ...</a>
+    </div>
+    <div class="mouse-events" style="display: flex; justify-content: center; margin: 20px">
+      <div class="mouse-events__box-one" style="
             width: 100px;
             height: 100px;
             border: 1px orchid solid;
             margin: 20px;
-          "
-        >
-          Mouse Simple Events
-        </div>
-        <div
-          class="mouse-events__box-two"
-          style="
+          ">
+        Mouse Simple Events
+      </div>
+      <div class="mouse-events__box-two" style="
             width: 100px;
             height: 100px;
             border: 1px red solid;
             margin: 20px;
-          "
-        >
-          Mouse Complex Events
-        </div>
-        <div
-          class="mouse-events__box-three"
-          style="
+          ">
+        Mouse Complex Events
+      </div>
+      <div class="mouse-events__box-three" style="
             width: 100px;
             height: 100px;
             border: 1px blue solid;
             margin: 20px;
-          "
-        >
-          Mouse Which Events
-        </div>
-      </div>
-      <div
-        class="keyboard-events"
-        style="display: flex; justify-content: center; margin: 20px"
-      >
-        <textarea
-          class="keyboard-events__textarea"
-          cols="100"
-          rows="10"
-        ></textarea>
-      </div>
-      <div
-        class="scroll-events"
-        style="display: flex; justify-content: center; margin: 20px"
-      >
-        <textarea class="scroll-events__textarea" cols="80" rows="3" readonly>
-Scroll</textarea
-        >
+          ">
+        Mouse Which Events
       </div>
     </div>
+    <div class="keyboard-events" style="display: flex; justify-content: center; margin: 20px">
+      <textarea class="keyboard-events__textarea" cols="100" rows="10"></textarea>
+    </div>
+    <div class="scroll-events" style="display: flex; justify-content: center; margin: 20px">
+      <textarea class="scroll-events__textarea" cols="80" rows="3" readonly>
+        Scroll
+      </textarea>
+    </div>
+  </div>
+  <script src="./working-with-events.js"></script>
+</body>
 
-    <script src="./working-with-events.js"></script>
-  </body>
 </html>

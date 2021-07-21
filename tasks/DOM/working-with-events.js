@@ -262,9 +262,9 @@ window.addEventListener('scroll', () => {
 //  - Они не всплывают. Но можно использовать фазу перехвата или focusin/focusout.
 //  - Большинство элементов не поддерживают фокусировку по умолчанию. Используйте tabindex, чтобы сделать фокусируемым любой элемент.
 
-document.body.blur();
 
 elementByClassKeyboardEvents.focus();
+elementByClassKeyboardEvents.blur()
 
 elementByClassKeyboardEvents.setAttribute("tabindex", 1);
 elementByClassScrollEvents.setAttribute("tabindex", 2);
@@ -277,4 +277,48 @@ elementByClassScrollEvents.setAttribute("tabindex", 2);
 
 elementByClassKeyboardEvents.addEventListener("change", function () {
   console.log("Изменение элемента text-area с классом .keyboard-events__textarea")
+})
+
+
+//---------------------------------------------------------------------------------------
+// MutationObserver: наблюдатель за изменениями
+//---------------------------------------------------------------------------------------
+
+// MutationObserver – это встроенный объект, наблюдающий за DOM-элементом и запускающий колбэк в случае изменений.
+
+// let observer = new MutationObserver(callback);
+//
+// observer.observe(node, config);
+// 
+// config – это объект с булевыми параметрами «на какие изменения реагировать»:
+//  - childList – изменения в непосредственных детях node,
+//  - subtree – во всех потомках node,
+//  - attributes – в атрибутах node,
+//  - attributeFilter – массив имён атрибутов, чтобы наблюдать только за выбранными.
+//  - characterData – наблюдать ли за node.data (текстовое содержимое),
+// 
+// И ещё пара опций:
+//  - characterDataOldValue – если true, будет передавать и старое и новое значение node.data в колбэк (см далее), иначе только новое (также требуется опция characterData),
+//  - attributeOldValue – если true, будет передавать и старое и новое старое значение атрибута в колбэк (см далее), иначе только новое (также требуется опция attributes).
+
+// Затем, после изменений, выполняется callback, в который изменения передаются первым аргументом как список объектов MutationRecord, а сам наблюдатель идёт вторым аргументом.
+// 
+// Объекты MutationRecord имеют следующие свойства:
+// - type – тип изменения, один из:
+//         "attributes" изменён атрибут,
+//         "characterData" изменены данные elem.data, это для текстовых узлов
+//         "childList" добавлены/удалены дочерние элементы,
+// - target – где произошло изменение: элемент для "attributes", текстовый узел для "characterData" или элемент для "childList",
+// - addedNodes/removedNodes – добавленные/удалённые узлы,
+// - previousSibling/nextSibling – предыдущий или следующий одноуровневый элемент для добавленных/удалённых элементов,
+// - attributeName/attributeNamespace – имя/пространство имён (для XML) изменённого атрибута,
+// - oldValue – предыдущее значение, только для изменений атрибута или текста, если включена соответствующая опция attributeOldValue/characterDataOldValue.
+
+const observer = new MutationObserver((mutationRecords) => {
+  console.log("MutationObserver : ", mutationRecords);
+});
+
+observer.observe(elementByClassKeyboardEvents, {
+  characterData: true,
+  characterDataOldValue: true
 });
