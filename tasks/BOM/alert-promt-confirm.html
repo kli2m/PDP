@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOM Alert Confirm Promt</title>
+</head>
+
+<body>
+  <div class="wrapper" style="display: flex;  justify-content: center;">
+    <div class="class-alert-box" style="display: flex; flex-direction: column; width: 200px; align-items: center; margin: 20px; ">
+      <p>Enter text message!</p>
+      <input type="text" name="alert-text" class="class-alert-box__input" style="width: 100%;height: 20px;">
+      <button class="class-alert-box__btn" style="width: 100%;height: 50px;">open Alert</button>
+    </div>
+    <div class="class-prompt-box" style="display: flex; flex-direction: column; width: 200px; align-items: center; margin: 20px">
+      <p>Enter question!</p>
+      <input type="text" name="prompt-text" class="class-prompt-box__input-question" style="width: 100%;height: 20px;">
+      <input type="text" name="prompt-text" class="class-prompt-box__input-answer" style="width: 100%;height: 20px;" value="answer" disabled>
+      <button class="class-prompt-box__btn" style="width: 100%;height: 50px;">open Prompt</button>
+    </div>
+    <div class="class-confirm-box" style="display: flex; flex-direction: column; width: 200px; align-items: center; margin: 20px">
+      <p>Enter question!</p>
+      <input type="text" name="confirm-text" class="class-confirm-box__input-question" style="width: 100%;height: 20px;">
+      <input type="text" name="confirm-text" class="class-confirm-box__input-answer" style="width: 100%;height: 20px;" value="answer" disabled>
+      <button class="class-confirm-box__btn" style="width: 100%;height: 50px;">open Confirm</button>
+    </div>
+  </div>
+  <script src="./alert-promt-confirm.js"></script>
+</body>
+
+</html>
