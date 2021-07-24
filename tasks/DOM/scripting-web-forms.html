@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+  <title>Scripting Web forms</title>
+</head>
+
+<body>
+  <div class="wrapper" style="display: flex;align-items: center; flex-direction: column;">
+    <p>Form</p>
+    <form class="form" action="post" name="myForm" style="display: table; width: 300px;">
+      <label style="display: table-row;">
+				<span style="display: table-cell;"> inputTypeText: </span>
+				<input style="display: table-cell; min-width: 200px;" type="text" name="inputTypeText">
+			</label>
+      <label style="display: table-row;">
+				<span style="display: table-cell;"> fieldsetElement: </span>
+				<fieldset style="display: table-cell; " name="fieldsetElement">
+					<legend>info</legend>
+					<input name="fieldsetInputTypeText" type="text" style="width: 100%;">
+				</fieldset>
+			</label>
+      <label style="display: table-row;">
+				<span style="display: table-cell;"> textArea: </span>
+				<textarea name="textArea" style="display: table-cell; min-width: 200px;"></textarea>
+			</label>
+      <label style="display: table-row;">
+				<span style="display: table-cell;"> inputTypeCheckbox: </span>
+				<input style="display: table-cell; min-width: 200px;" type="checkbox" name="inputTypeCheckbox">
+			</label>
+      <label style="display: table-row;">
+				<span style="display: table-cell;"> inputTypeRadio: </span>
+				<label style="display: table-cell; min-width: 200px;text-align: center;">
+					<input type="radio" name="inputTypeRadio">
+					<input type="radio" name="inputTypeRadio">
+				</label>
+      </label>
+      <label style="display: table-row;">
+				<span style="display: table-cell;"> selectElement: </span>
+				<select class="selectElement" name="selectElement" style="display: table-cell; min-width: 200px;">
+					<option value="apple">Яблоко</option>
+					<option value="pear">Груша</option>
+					<option value="banana">Банан</option>
+				</select>
+			</label>
+      <label style="display: table-row;">
+				<span style="display: table-cell;"> inputTypeSubmit: </span>
+				<input style="display: table-cell; min-width: 200px;" type="submit" name="inputTypeSubmit">
+			</label>
+    </form>
+  </div>
+  <script src="./scripting-web-forms.js"></script>
+</body>
+
+</html>
