@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOM timing</title>
+</head>
+
+<body>
+  <div class="wrapper" style="display: flex; flex-direction: column; width: 70%; align-items: center;">
+    <label style="display: flex; flex-direction: column; align-items: flex-start; width: 400px;">
+      <p>SetTimeout:</p>
+      <p> Нажми и через 5 секунд появится сообщение</p>
+      <button class="class-btn-set-timeout-start" style="width: 100px;height: 50px;">Start</button>
+    </label>
+    <hr>
+    <label style="display: flex; flex-direction: column; align-items: flex-start;width: 400px;">
+      <p>SetInterval:</p>
+      <p> Нажми и каждую секунду будет меняться счетчик</p>
+      <button class="class-btn-set-interval-start" style="width: 100px;height: 50px;">Start</button>
+      <p> Нажми для остановки счетчика</p>
+      <button class="class-btn-set-interval-stop" style="width: 100px;height: 50px;">Stop</button>
+    </label>
+  </div>
+  <script src="./timing.js"></script>
+</body>
+
+</html>
