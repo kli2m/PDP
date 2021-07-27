@@ -11,6 +11,7 @@ getTextAreaElementByClass.value = ""; // Очищаем TextArea
 
 getTextAreaElementByClass.value += `window.navigator = ${window.navigator} \n`
 
+
 // Свойства
 getTextAreaElementByClass.value += `\nСвойства: \n`
 
@@ -59,12 +60,13 @@ getTextAreaElementByClass.value += `navigator.product = ${navigator.product} \n`
 // NavigatorID.userAgent -  Возвращает строку агента пользователя для данного браузера.
 getTextAreaElementByClass.value += `navigator.userAgent = ${navigator.userAgent} \n`
 
+
 // Navigator.serviceWorker -  Возвращает ServiceWorkerContainer объект, который обеспечивает доступ к регистрации, удалению, обновлению и связи с ServiceWorker объектами для соответствующего документа. 
 getTextAreaElementByClass.value += `navigator.serviceWorker = ${navigator.serviceWorker} \n`
 
+
 // Методы
 getTextAreaElementByClass.value += `\nМетоды \n`
-
 
 // NavigatorPlugins.javaEnabled -  Возвращает Boolean  флаг, показывающий включён ли в браузере java или нет.
 getTextAreaElementByClass.value += `navigator.javaEnabled() - Возвращает Boolean  флаг, показывающий включён ли в браузере java или нет. \n`
@@ -74,3 +76,63 @@ getTextAreaElementByClass.value += `navigator.registerProtocolHandler() - Раз
 
 // navigator.vibrate() -  Причина вибрации устройства с поддержкой её. Не делает ничего, если нет поддержки вибрации.
 getTextAreaElementByClass.value += `navigator.vibrate() - Причина вибрации устройства с поддержкой её. \n`
+
+// Проверка на устройство
+const detectDevice = () => {
+  let result = 'ПК';
+  if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
+    result = 'mobile'
+  } else if (navigator.userAgent.toLowerCase().match(/android/i)) {
+    result = 'android'
+  } else if (navigator.userAgent.toLowerCase().match(/iphone/i)) {
+    result = 'iphone'
+  } else if (navigator.userAgent.toLowerCase().match(/ipad/i)) {
+    result = 'ipad'
+  } else if (navigator.userAgent.toLowerCase().match(/webOS/i)) {
+    result = 'webOS'
+  } else if (navigator.userAgent.toLowerCase().match(/iPod/i)) {
+    result = 'iPod'
+  } else if (navigator.userAgent.toLowerCase().match(/BlackBerry/i)) {
+    result = 'BlackBerry'
+  } else if (navigator.userAgent.toLowerCase().match(/BB/i)) {
+    result = 'BB'
+  } else if (navigator.userAgent.toLowerCase().match(/PlayBook/i)) {
+    result = 'PlayBook'
+  } else if (navigator.userAgent.toLowerCase().match(/IEMobile/i)) {
+    result = 'IEMobile'
+  } else if (navigator.userAgent.toLowerCase().match(/Windows Phone/i)) {
+    result = 'Windows Phone'
+  } else if (navigator.userAgent.toLowerCase().match(/Kindle/i)) {
+    result = 'Kindle'
+  } else if (navigator.userAgent.toLowerCase().match(/Silk/i)) {
+    result = 'Silk'
+  } else if (navigator.userAgent.toLowerCase().match(/Opera Mini/i)) {
+    result = 'Opera Mini'
+  }
+  return result
+}
+
+getTextAreaElementByClass.value += `Вы используете ${detectDevice()} \n`;
+
+// Определяем текущий браузер
+const detectBrowser = () => {
+  let result = 'Other';
+  if (navigator.userAgent.indexOf('YaBrowser') !== -1) {
+    result = 'Yandex Browser';
+  } else if (navigator.userAgent.indexOf('Firefox') !== -1) {
+    result = 'Mozilla Firefox';
+  } else if (navigator.userAgent.indexOf('MSIE') !== -1) {
+    result = 'Internet Exploder';
+  } else if (navigator.userAgent.indexOf('Edge') !== -1) {
+    result = 'Microsoft Edge';
+  } else if (navigator.userAgent.indexOf('Safari') !== -1) {
+    result = 'Safari';
+  } else if (navigator.userAgent.indexOf('Opera') !== -1) {
+    result = 'Opera';
+  } else if (navigator.userAgent.indexOf('Chrome') !== -1) {
+    result = 'Google Chrome';
+  }
+  return result;
+}
+
+getTextAreaElementByClass.value += `Вы используете браузер = ${detectBrowser()} \n`
