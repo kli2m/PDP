@@ -65,3 +65,46 @@
 - Timing
 - Cookies
 - Methods alert() / prompt() / confirm()
+
+---
+
+## _[JS](./js.md)_
+
+### Core
+
+- [Language basics](https://learn.javascript.ru/intro)
+- [Types](./DATA_TYPES/README.md)
+- Objects
+- Functions (declaration/expression/arrow)
+- Function context, scope, [arguments]; closures
+- Loops, conditions
+- Prototype inheritance (**ptoto**, class keyword)
+
+### ES5 features
+
+- Strict mode "Use strict"
+- New methods of string: String.trim()
+- New methods of arrays: Array.isArray() / Array.forEach() / Array.map() / Array.filter() / Array.reduce() / Array.every() / Array.some() / Array.indexOf() / etc
+- New methods for work with JSON
+- Date.now()
+- TODO
+
+### ES2015 (ES6) features
+
+- Const / Let declarations
+- Understand differences between [var], [let] and [const]
+- Know block scope and [let] visibility
+- Able to explain dead zone concept for [let]
+- Default function parameters – learn how to set the default value for parameters of a function.
+- Arrow functions
+- Know difference between arrow and usual functions
+- Able to discover cases for both arrow and usual functions using
+- Rest parameter – introduce you to the rest parameter and how to use them effectively.
+- Spread operator – learn how to use the spread operator effectively.
+- Object literal syntax extensions – provide a new way to define object literal.
+- for…of – learn how to use the for...of loop to iterate over elements of an iterable object.
+- Array Destructuring – show you how to assign elements of an array to variables.
+- Object Destructuring – learn how to assign properties of an object to variables.
+- ES6 modules – learn how to write modular JavaScript code.
+
+---
