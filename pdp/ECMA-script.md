@@ -24,4 +24,3 @@ ECMAScript реализован в нескольких диалектах, ос
 ---
 
 ***[Versions](https://en.wikipedia.org/wiki/ECMAScript)***
-
