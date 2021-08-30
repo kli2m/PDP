@@ -1,11 +1,26 @@
 // Методы массивов
 
+
+const noarray = "this is string type";
+const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 // Добавление/удаление элементов
 
+
 // arr.push(...items) – Добавляет элемент в конец массива и возвращает индекс этого элемента,
+console.log("array.push(push)", array.push("push"))  // 11
+
 // arr.pop() – Удаляет последний элемент из массива и возвращает его,
+console.log("array.pop()", array.pop())  // "push"
+console.log("array.pop(noarray)", array.pop(noarray))  // 9
+
 // arr.shift() – Удаляет из массива первый элемент и возвращает его,
+console.log("array.shift()", array.shift())  // 0
+console.log("array.shift(noarray)", array.shift("noarray"))  // 1
+
 // arr.unshift(...items) – Добавляет элемент в начало массива и возвращает индекс этого элемента.
+console.log("array.unshift()", array.unshift())  // 7
+console.log("array.unshift(noarray)", array.unshift("noarray"))  // 8
 
 
 // splice
@@ -31,6 +46,8 @@ console.log(arr)  // [ "1", [ "7", "8", "9" ] , "3", "4" ]
 console.log(arr.splice(-1, 0, arr2))  // [ ]
 console.log(arr)  // [ "1", [ "7", "8", "9" ] , "3", [ "7", "8", "9" ] , "4" ]
 
+console.log("splice(noarray,2)", arr.splice(noarray, 2))  // ["1", [ "7", "8", "9" ]]
+
 
 // slice
 
@@ -42,6 +59,8 @@ let arrSlice = ['h', 'e', 'l', 'l', 'o'];
 console.log(arrSlice.slice(1, 3)); // e,l (копирует с 1 до 3)
 console.log(arrSlice.slice(-2)); // l,o (копирует с -2 до конца)
 console.log(arrSlice.slice()); // ['h', 'e', 'l', 'l', 'o'] ( создаёт копию массива )
+
+console.log("slice(noarray,3)", arrSlice.slice(noarray, 3))  // [ "h", "e", "l" ]
 
 
 // concat
@@ -55,6 +74,8 @@ let arrConcatOne = [1, 2, 3, 4, 5]
 let arrConcatTwo = [6, 7, 8, 9, 0]
 
 console.log(arrConcatOne.concat(arrConcatTwo)) // [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 ]
+
+console.log("concat(noarray)", arrConcatOne.concat(noarray)) // [ 1, 2, 3, 4, 5, "this is string type" ]
 
 
 // Перебор: forEach
