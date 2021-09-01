@@ -73,8 +73,8 @@
 ### Core
 
 * [Language basics](https://learn.javascript.ru/intro)
-* [Types](./DATA_TYPES/README.md)
-* Objects
+* [Types](../tasks/JS/DataTypes/)
+* [Objects](../tasks/JS/DataTypes/objects.js)
 * Functions (declaration/expression/arrow)
 * Function context, scope, [arguments]; closures
 * Loops, conditions
@@ -84,7 +84,7 @@
 
 * Strict mode "Use strict"
 * New methods of string: String.trim()
-* New methods of arrays: Array.isArray() / Array.forEach() / Array.map() / Array.filter() / Array.reduce() / Array.every() / Array.some() / Array.indexOf() / etc
+* [New methods of arrays: Array.isArray() / Array.forEach() / Array.map() / Array.filter() / Array.reduce() / Array.every() / Array.some() / Array.indexOf() / etc](../tasks/JS/DataTypes/array-methods.js)
 * New methods for work with JSON
 * Date.now()
 * TODO
