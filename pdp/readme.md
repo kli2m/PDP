@@ -108,3 +108,7 @@
 * ES6 modules – learn how to write modular JavaScript code.
 
 ---
+
+## _[Git](./git.md)_
+
+* [main resource of technology](https://git-scm.com/book/ru/v2)
