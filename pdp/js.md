@@ -7,16 +7,6 @@
  Его разработал Brendan Eich, сооснователь проекта Mozilla, Mozilla Foundation и Mozilla Corporation.
 
 ---
- ### Common:
-
-* #### [Class](../tasks/JS/Class/class.js)
-* #### [Loops](../tasks/JS/Loops/loops.js)
-* #### [Prototype](../tasks/JS/Prototype/prototype.js)
-* #### [This](../tasks/JS/This/this.js)
-* #### [Promises](../tasks/JS/Promises//promises.js)
-
-
-
  ### Data Types:
 
 * #### [Arrays](../tasks/JS/DataTypes/arrays.js)
