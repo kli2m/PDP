@@ -1,3 +1,20 @@
+// ----------- Object.prototype
+// obj = {} – это то же самое, что и obj = new Object(), где Object – встроенная функция-конструктор для объектов
+// с собственным свойством prototype, которое ссылается на огромный объект с методом toString и другими.
+
+// Когда вызывается new Object() (или создаётся объект с помощью литерала {...}), свойство [[Prototype]] этого объекта 
+// устанавливается на Object.prototype 
+
+let objj = {};
+
+alert(objj.__proto__ === Object.prototype); // true
+// objj.toString === objj.__proto__.toString === Object.prototype.toString
+
+// !! Object.create(proto[, descriptors]) – создаёт пустой объект со свойством [[Prototype]], указанным как proto, 
+// и необязательными дескрипторами свойств descriptors.
+// !! Object.create(null) создаёт пустой объект без прототипа ([[Prototype]] будет null)
+
+
 // Object.keys, values, entries
 
 
