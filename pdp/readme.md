@@ -75,10 +75,13 @@
 * [Language basics](https://learn.javascript.ru/intro)
 * [Types](../tasks/JS/DataTypes/)
 * [Objects](../tasks/JS/DataTypes/objects.js)
+* [Class](../tasks/JS/Class/class.js)
+* [Loops, Conditions](../tasks/JS/Loops/loops.js)
+* [Prototype](../tasks/JS/Prototype/prototype.js)
+* [This](../tasks/JS/This/this.js)
+* [Promises](../tasks/JS/Promises//promises.js)
 * Functions (declaration/expression/arrow)
 * Function context, scope, [arguments]; closures
-* Loops, conditions
-* Prototype inheritance (**ptoto**, class keyword)
 
 ### ES5 features
 

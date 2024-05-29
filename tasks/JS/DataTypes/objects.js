@@ -1,12 +1,29 @@
+// ----------- Object.prototype
+// obj = {} – это то же самое, что и obj = new Object(), где Object – встроенная функция-конструктор для объектов
+// с собственным свойством prototype, которое ссылается на огромный объект с методом toString и другими.
+
+// Когда вызывается new Object() (или создаётся объект с помощью литерала {...}), свойство [[Prototype]] этого объекта 
+// устанавливается на Object.prototype 
+
+let objj = {};
+
+alert(objj.__proto__ === Object.prototype); // true
+// objj.toString === objj.__proto__.toString === Object.prototype.toString
+
+// !! Object.create(proto[, descriptors]) – создаёт пустой объект со свойством [[Prototype]], указанным как proto, 
+// и необязательными дескрипторами свойств descriptors.
+// !! Object.create(null) создаёт пустой объект без прототипа ([[Prototype]] будет null)
+
+
 // Object.keys, values, entries
 
 
 let obj = {
-  name: "Ivan",
-  age: 30,
-  weight: 80
-}
-// Для простых объектов доступны следующие методы:
+        name: "Ivan",
+        age: 30,
+        weight: 80
+    }
+    // Для простых объектов доступны следующие методы:
 
 // Object.keys(obj) – возвращает массив ключей.
 console.log(Object.keys(obj)) // [ "name", "age", "weight" ]
@@ -23,7 +40,7 @@ console.log(Object.entries(obj)) // [ [ "name", "Ivan" ], [ "age", 30 ], [ "weig
 // существует метод Reflect.ownKeys(obj), который возвращает все ключи.
 
 
-// Трансформации объекта
+// ------------- Трансформации объекта
 
 // Если мы хотели бы применить методы массивов, то можно использовать Object.entries с последующим вызовом Object.fromEntries:
 
@@ -32,20 +49,88 @@ console.log(Object.entries(obj)) // [ [ "name", "Ivan" ], [ "age", 30 ], [ "weig
 // 3) Используем Object.fromEntries(array) на результате, чтобы преобразовать его обратно в объект.
 
 let prices = {
-  banana: 1,
-  orange: 2,
-  meat: 4,
+    banana: 1,
+    orange: 2,
+    meat: 4,
 };
 
 let doublePrices = Object.fromEntries(
-  // преобразовать в массив, затем map, затем fromEntries обратно объект
-  Object.entries(prices).map(([key, value]) => [key, value * 2])
+    // преобразовать в массив, затем map, затем fromEntries обратно объект
+    Object.entries(prices).map(([key, value]) => [key, value * 2])
 );
 
 console.log(doublePrices.meat); // 8
 
 
-// Tasks
+// ------------- Геттеры и сеттеры
+
+// Есть два типа свойств объекта. 
+// Первый тип это свойства-данные (data properties). 
+// Второй тип это свойства-аксессоры (accessor properties).
+obj = {
+    get propName() {
+        // геттер, срабатывает при чтении obj.propName
+    },
+
+    set propName(value) {
+        // сеттер, срабатывает при записи obj.propName = value
+    }
+};
+// Дескрипторы свойств-аксессоров отличаются от «обычных» свойств-данных.
+// Свойства-аксессоры не имеют value и writable, но взамен предлагают функции get и set.
+
+
+
+// ------------- Флаги и дескрипторы свойств
+
+// Помимо значения value, свойства объекта имеют три специальных атрибута (так называемые «флаги»).
+
+// writable – если true, свойство можно изменить, иначе оно только для чтения.
+// enumerable – если true, свойство перечисляется в циклах, в противном случае циклы его игнорируют.
+// configurable – если true, свойство можно удалить, а эти атрибуты можно изменять, иначе этого делать нельзя.
+
+// Метод Object.getOwnPropertyDescriptor позволяет получить полную информацию о свойстве.
+
+let descriptor = Object.getOwnPropertyDescriptor(prices, propertyName);
+// Возвращаемое значение – это объект, так называемый «дескриптор свойства»: он содержит значение свойства и все его флаги.
+/* дескриптор свойства:
+ {
+   "value": "John",
+   "writable": true,
+   "enumerable": true,
+   "configurable": true
+ }
+ */
+// Чтобы изменить флаги, мы можем использовать метод Object.defineProperty.
+Object.defineProperty(obj, propertyName, descriptor)
+
+// Чтобы получить все дескрипторы свойств сразу, можно воспользоваться методом Object.getOwnPropertyDescriptors(obj).
+
+//Вместе с Object.defineProperties этот метод можно использовать для клонирования объекта вместе с его флагами:
+let clone = Object.defineProperties({}, Object.getOwnPropertyDescriptors(obj));
+
+// ------------- Глобальное запечатывание объекта
+// Дескрипторы свойств работают на уровне конкретных свойств.
+
+// Но ещё есть методы, которые ограничивают доступ ко всему объекту:
+
+Object.preventExtensions(obj)
+    // Запрещает добавлять новые свойства в объект.
+Object.seal(obj)
+    // Запрещает добавлять/удалять свойства. Устанавливает configurable: false для всех существующих свойств.
+Object.freeze(obj)
+    // Запрещает добавлять/удалять/изменять свойства. Устанавливает configurable: false, writable: false для всех существующих свойств.
+
+// А также есть методы для их проверки:
+Object.isExtensible(obj)
+    // Возвращает false, если добавление свойств запрещено, иначе true.
+Object.isSealed(obj)
+    // Возвращает true, если добавление/удаление свойств запрещено и для всех существующих свойств установлено configurable: false.
+Object.isFrozen(obj)
+    // Возвращает true, если добавление/удаление/изменение свойств запрещено, и для всех текущих свойств установлено configurable: false, writable: false.
+
+
+// ------------- Tasks
 
 // 1) Сумма свойств объекта
 // Есть объект salaries с произвольным количеством свойств, содержащих заработные платы.
@@ -53,13 +138,13 @@ console.log(doublePrices.meat); // 8
 // Если объект salaries пуст, то результат должен быть 0. 
 
 function sumSalaries(salaries) {
-  return Object.values(salaries).reduce((pre, item) => pre + item, 0)
+    return Object.values(salaries).reduce((pre, item) => pre + item, 0)
 }
 
 let salaries = {
-  "John": 100,
-  "Pete": 300,
-  "Mary": 250
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
 };
 
 console.log(sumSalaries(salaries)); // 650
@@ -72,10 +157,10 @@ console.log(sumSalaries(salaries)); // 650
 // P.S. Игнорируйте символьные свойства, подсчитывайте только «обычные».
 
 function count(obj) {
-  return Object.keys(obj).length
+    return Object.keys(obj).length
 }
 let user = {
-  name: 'John',
-  age: 30
+    name: 'John',
+    age: 30
 };
 console.log(count(user)); // 2

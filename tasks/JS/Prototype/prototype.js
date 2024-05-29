@@ -8,11 +8,11 @@
 // В современном языке его заменяют функции Object.getPrototypeOf/Object.setPrototypeOf
 
 let animal = {
-  eats: true
+    eats: true
 };
 
 let rabbit = {
-  jumps: true
+    jumps: true
 };
 
 rabbit.__proto__ = animal; // устанавливаем animal как прототип для rabbit
@@ -22,17 +22,17 @@ console.log(`rabbit.eats`, rabbit.eats); // true
 console.log(`rabbit.jumps`, rabbit.jumps); // true
 
 
-console.log(animal.prototype)                      // undefined  - нет такого метода или свойства
-console.log(animal.__proto__)                      // Object.prototype
-console.log(animal.__proto__.__proto__)            // null
+console.log(animal.prototype) // undefined  - нет такого метода или свойства
+console.log(animal.__proto__) // Object.prototype
+console.log(animal.__proto__.__proto__) // null
 
-console.log(rabbit.prototype)                      // undefined  - нет такого метода или свойства
-console.log(rabbit.__proto__)                      // animal
-console.log(rabbit.__proto__.__proto__)            // Object.prototype
-console.log(rabbit.__proto__.__proto__.__proto__)  // null
+console.log(rabbit.prototype) // undefined  - нет такого метода или свойства
+console.log(rabbit.__proto__) // animal
+console.log(rabbit.__proto__.__proto__) // Object.prototype
+console.log(rabbit.__proto__.__proto__.__proto__) // null
 
-console.log({}.__proto__)                          // Object.prototype
-console.log([].__proto__)                          // Array.prototype
+console.log({}.__proto__) // Object.prototype
+console.log([].__proto__) // Array.prototype
 
 // !!! Значение __proto__ может быть объектом или null. Другие типы игнорируются.
 // !!! Ссылки не могут идти по кругу. JavaScript выдаст ошибку, если мы попытаемся назначить __proto__ по кругу.
@@ -49,9 +49,9 @@ console.log([].__proto__)                          // Array.prototype
 // obj.hasOwnProperty(key) - возвращает true, если у obj есть собственное, не унаследованное, свойство с именем key.
 
 for (const key in rabbit) {
-  if (rabbit.hasOwnProperty(key)) {
-    console.log(`OwnProperty`, key)          // jumps 
-  } else console.log(`not OwnProperty`, key)  // eats
+    if (rabbit.hasOwnProperty(key)) {
+        console.log(`OwnProperty`, key) // jumps 
+    } else console.log(`not OwnProperty`, key) // eats
 }
 
 // Почему hasOwnProperty не появляется в цикле for..in в отличие от eats и jumps? 
@@ -63,11 +63,11 @@ for (const key in rabbit) {
 // Если в F.prototype содержится объект, оператор new устанавливает его в качестве [[Prototype]] для нового объекта.
 
 let animal2 = {
-  eats: true
+    eats: true
 };
 
 function Rabbit(name) {
-  this.name = name;
+    this.name = name;
 }
 
 Rabbit.prototype = animal; // Устанавливаем значение свойству prototype объект animal
@@ -81,19 +81,19 @@ console.log(`rabbit2.eats`, rabbit2.eats); // true
 
 // F.prototype по умолчанию, свойство constructor
 
-// У каждой функции по умолчанию уже есть свойство "prototype"
+// !! У каждой функции по умолчанию уже есть свойство "prototype"
 // По умолчанию "prototype" – объект с единственным свойством constructor, которое ссылается на функцию-конструктор.
 
-function fn() { }
+function fn() {}
 
-console.log(`fn.prototype`, fn.prototype)  //  { constructor: function fn() }
-console.log(`fn.prototype.constructor`, fn.prototype.constructor)  //  function fn()
+console.log(`fn.prototype`, fn.prototype) //  { constructor: function fn() }
+console.log(`fn.prototype.constructor`, fn.prototype.constructor) //  function fn()
 
 let objFn = new fn()
 
 console.log(objFn.constructor == fn); // true (свойство получено из прототипа)
-console.log(objFn.prototype);         //  undefined
-console.log(objFn.__proto__);         //  { constructor: function fn() }
+console.log(objFn.prototype); //  undefined
+console.log(objFn.__proto__); //  { constructor: function fn() }
 
 
 // Примитивы
